@@ -28,11 +28,13 @@
   </head>
   <body>
     <noscript><h1>Sorry, Your Browser does not support JavaScript</h1></noscript>
-    <h1><a href="javascript:/*jshint ignore:start*/open('javascript:\'<script src=\\'https://nicecat99.github.io/bavalt/js/bavalt.js\\'></script>\'');/*jshint ignore:end*/', 'Bavalt', 'popup width=599 height=400 resizable=no location=no');">Click here to open again</a></h1>
+    <h1><a href="javascript:/*jshint ignore:start*/window.open('javascript:\'<script src=\\\'https://nicecat99.github.io/bavalt/js/bavalt.js\\\'></script>\'', 'Bavalt', 'popup width=599 height=400 resizable=no location=no');/*jshint ignore:end*/', 'Bavalt', 'popup width=599 height=400 resizable=no location=no');">Click here to open again</a></h1>
     <h1>If nothing happened, then try enabling pop-up</h1>
     <!--Open Bavalt--!>
     <script>
-window.open('https://nicecat99.github.io/bavalt/js/window.html', 'Bavalt', 'popup width=599 height=400 resizable=no location=no');
+//jshint ignore:start
+window.open('javascript:\'<script src=\\\'https://nicecat99.github.io/bavalt/js/bavalt.js\\\'></script>\'', 'Bavalt', 'popup width=599 height=400 resizable=no');
+//jshint ignore:end
     </script>
   </body>
 </html>
