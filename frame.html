@@ -30,9 +30,10 @@
     <noscript><center><h1>Sorry, Your Browser does not support JavaScript</h1></center></noscript>
     <center><iframe id="pos" src="window.html" width="599" height="400"></iframe></center>
   <script>
-    var p = document.getElementById('px');
+    var p = document.getElementById('px').style;
+    p.position = 'fixed';
     function pos(){
-      p.style.top = ((innerWidth/2) - 200) + 'px';
+      p.top = ((innerWidth/2) - 200) + 'px';
     }
     
     window.setInterval(pos);
