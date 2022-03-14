@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset = "utf-8">
-    <title>Bavalt</title>
+    <title>Open Bavalt</title>
     <style>
       a {
          color: white;
@@ -28,6 +28,12 @@
   </head>
   <body>
     <noscript><center><h1>Sorry, Your Browser does not support JavaScript</h1></center></noscript>
-    <center><iframe src="frame.html" width="599" height="400"></iframe></center>
+    <h1><center><a href="javascript:launch();"></a></center></h1>
+    <center>You may need to enable "pop up" for this to work</center>
+    <script>
+      function launch(){
+        window.open("window.html", "Bavalt", "width=599 height=400 resizable=no popup");
+      }
+    </script>
   </body>
 </html>
