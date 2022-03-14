@@ -28,6 +28,14 @@
   </head>
   <body>
     <noscript><center><h1>Sorry, Your Browser does not support JavaScript</h1></center></noscript>
-    <center><iframe src="window.html" width="599" height="400"></iframe></center>
+    <center><iframe id="pos" src="window.html" width="599" height="400"></iframe></center>
+  <script>
+    var p = document.getElementById('px');
+    function pos(){
+      p.style.top = ((innerWidth/2) - 200) + 'px';
+    }
+    
+    window.setInterval(pos);
+  </script>
   </body>
 </html>
