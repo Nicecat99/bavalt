@@ -8,13 +8,6 @@
          color: white;
       }
       
-      .size {
-        width: 599px;
-        height: 400px;
-        position: fixed;
-        left: 0px;
-        top: 0px;
-      }
       
       body {
          margin: 0;
@@ -31,7 +24,7 @@
     <center><iframe id="pos" src="window.html" width="599" height="400"></iframe></center>
   <script>
     var p = document.getElementById('pos').style;
-    p.position = 'fixed';
+    p.position = 'relative';
     function pos(){
       p.top = ((innerWidth/2) - 200) + 'px';
     }
