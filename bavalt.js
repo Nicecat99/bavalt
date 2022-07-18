@@ -86,8 +86,8 @@ document.title = 'Bavalt';
             alert('Money Limit');
         } else if(limit <= 4){
             alert('Be on level 5');
-        } else if(limit >= 5 && $ >= 9){
-            alert('You need $10s');
+        } else if(limit >= 5 && $ <= 9){
+            alert('$10s');
         } else {
             BallBar();
         }
