@@ -86,8 +86,8 @@ document.title = 'Bavalt';
             alert('Money Limit');
         } else if(limit <= 4){
             alert('Be on level 5');
-        } else if(limit >= 5 && $ <= 9){
-            alert('$10s');
+        } else if(limit >= 5 && $ < 10){
+            alert('You need at least $10s');
         } else {
             BallBar();
         }
@@ -114,7 +114,7 @@ document.title = 'Bavalt';
             }
             
             if(limit !== 1 && $ <= 2){
-                alert('You need $3s');
+                alert('You need at least $3s');
             }
             if ($ >= 3) {
               $ -= 2;
@@ -139,7 +139,7 @@ document.title = 'Bavalt';
               $ -= 2;
               LevelUp();
             } else {
-                alert('You need $2s');
+                alert('You need at least $2s');
             }
 
           });
