@@ -47,10 +47,22 @@ document.title = 'Bavalt';
       
       document.body.style.fontFamily = 'sans-serif';
       var draw4;
-      var $ = 0;
+      var $ = localStorage.getItem('$');
       var challenge = false;
-      var limit = 1;
+      var limit = localStorage.getItem('limit');
       var time = 30000;
+      if(!$){
+            localStorage.setItem('$',0);
+      }
+
+      if(!limit){
+            localStorage.setItem('limit',1);
+      }
+
+      function money(amount){
+            localStorage.setItem('$',$+amount);
+      }
+
       function Play() {
         document.body.style.cursor = 'default';
         function Start() {
@@ -456,7 +468,7 @@ document.title = 'Bavalt';
               }
 
               clearInterval(draw2);
-              limit += 1;
+              localStorage.setItem('limit',limit + 1);
               Start();
 
             }
@@ -603,7 +615,7 @@ document.title = 'Bavalt';
             }
 
             if (Score > 999) {
-              $ += 1;
+              money(1);
               Score = 0;
               clearInterval(draw);
               Start();
@@ -792,7 +804,7 @@ document.title = 'Bavalt';
                 
                 if(Pt >= 50){
                     clearInterval(draw5);
-                    $ += 30;
+                    money(30);
                     Start();
                 }
                 
@@ -803,7 +815,7 @@ document.title = 'Bavalt';
             });
         }
         
-        document.body.innerHTML = '<span style = "color:white;">v1.0</span><h1 style = "position:fixed;color:white;font-size:75px;left:190px;top:70px;">Bavalt</h1><h3 style = "color:white;font-size:35px;position:fixed;left:200px;top:170px;cursor:pointer;" id = "start">Click to start</h3>';
+        document.body.innerHTML = '<span style = "color:white;">v1.0.2</span><h1 style = "position:fixed;color:white;font-size:75px;left:190px;top:70px;">Bavalt</h1><h3 style = "color:white;font-size:35px;position:fixed;left:200px;top:170px;cursor:pointer;" id = "start">Click to start</h3>';
     
         document.getElementById('start').addEventListener('click', Start);
         
