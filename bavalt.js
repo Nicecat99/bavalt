@@ -47,17 +47,20 @@ document.title = 'Bavalt';
       
       document.body.style.fontFamily = 'sans-serif';
       var draw4;
-      var $ = localStorage.getItem('$');
+      var $;
       var challenge = false;
-      var limit = localStorage.getItem('limit');
+      var limit;
       var time = 30000;
-      if(!$){
+      if(!!localStorage.getItem('$')){
             localStorage.setItem('$',0);
       }
 
-      if(!limit){
+      if(!!localStorage.getItem('limit')){
             localStorage.setItem('limit',1);
       }
+
+      $ = localStorage.getItem('$');
+      limit = localStorage.getItem('limit');
 
       function money(amount){
             localStorage.setItem('$',$+amount);
