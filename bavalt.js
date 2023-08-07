@@ -59,8 +59,8 @@ document.title = 'Bavalt';
             localStorage.setItem('limit',1);
       }
 
-      $ = localStorage.getItem('$');
-      limit = localStorage.getItem('limit');
+      $ = parseInt(localStorage.getItem('$'));
+      limit = parseInt(localStorage.getItem('limit'));
 
       function money(amount){
             localStorage.setItem('$',parseInt($)+amount);
