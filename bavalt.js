@@ -63,7 +63,8 @@ document.title = 'Bavalt';
       limit = localStorage.getItem('limit');
 
       function money(amount){
-            localStorage.setItem('$',$+amount);
+            localStorage.setItem('$',parseInt($)+amount);
+            
       }
 
       function Play() {
@@ -471,7 +472,7 @@ document.title = 'Bavalt';
               }
 
               clearInterval(draw2);
-              localStorage.setItem('limit',limit + 1);
+              localStorage.setItem('limit',parseInt(limit) + 1);
               Start();
 
             }
