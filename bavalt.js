@@ -51,11 +51,11 @@ document.title = 'Bavalt';
       var challenge = false;
       var limit;
       var time = 30000;
-      if(!!localStorage.getItem('$')){
+      if(!localStorage.getItem('$')){
             localStorage.setItem('$','');
       }
 
-      if(!!localStorage.getItem('limit')){
+      if(!localStorage.getItem('limit')){
             localStorage.setItem('limit',' ');
       }
 
