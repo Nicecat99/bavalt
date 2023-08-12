@@ -59,12 +59,12 @@ document.title = 'Bavalt';
             localStorage.setItem('limit',' ');
       }
 
-      $ = localStorage.$.length;
+      $ = localStorage.getItem('$').length;
       limit = localStorage.limit.length;
 
 
       function Play() {
-        $ = localStorage.$.length;
+        $ = localStorage.getItem('$').length;
         limit = localStorage.limit.length;
         document.body.style.cursor = 'default';
         function Start() {
@@ -617,7 +617,7 @@ document.title = 'Bavalt';
             }
 
             if (Score > 999) {
-              localStorage.setItem('$',localStorage.$+'i');
+              localStorage.setItem('$',localStorage.getItem('$')+'i');
               Score = 0;
               clearInterval(draw);
               Start();
@@ -806,7 +806,7 @@ document.title = 'Bavalt';
                 
                 if(Pt >= 50){
                     clearInterval(draw5);
-                    localStorage.setItem('$',localStorage.$+'iiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
+                    localStorage.setItem('$',localStorage.getItem('$')+'iiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
                     Start();
                 }
                 
