@@ -52,22 +52,20 @@ document.title = 'Bavalt';
       var limit;
       var time = 30000;
       if(!!localStorage.getItem('$')){
-            localStorage.setItem('$',0);
+            localStorage.setItem('$','');
       }
 
       if(!!localStorage.getItem('limit')){
-            localStorage.setItem('limit',1);
+            localStorage.setItem('limit',' ');
       }
 
-      $ = parseInt(localStorage.getItem('$'));
-      limit = parseInt(localStorage.getItem('limit'));
+      $ = localStorage.$.length;
+      limit = localStorage.limit.length;
 
-      function money(amount){
-            localStorage.setItem('$',parseInt($)+amount);
-            
-      }
 
       function Play() {
+        $ = localStorage.$.length;
+        limit = localStorage.limit.length;
         document.body.style.cursor = 'default';
         function Start() {
         document.body.title = 'Menu';
@@ -472,7 +470,7 @@ document.title = 'Bavalt';
               }
 
               clearInterval(draw2);
-              localStorage.setItem('limit',parseInt(limit) + 1);
+              localStorage.setItem('limit',localStorage.limit + 'i');
               Start();
 
             }
@@ -619,7 +617,7 @@ document.title = 'Bavalt';
             }
 
             if (Score > 999) {
-              money(1);
+              localStorage.setItem('$',localStorage.$+'i');
               Score = 0;
               clearInterval(draw);
               Start();
@@ -808,7 +806,7 @@ document.title = 'Bavalt';
                 
                 if(Pt >= 50){
                     clearInterval(draw5);
-                    money(30);
+                    localStorage.setItem('$',localStorage.$+'iiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
                     Start();
                 }
                 
