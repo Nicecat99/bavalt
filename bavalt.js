@@ -59,9 +59,10 @@ document.title = 'Bavalt';
             localStorage.setItem('limit',' ');
       }
 
+setInterval(function(){
       $ = localStorage.getItem('$').length;
       limit = localStorage.limit.length;
-
+});
 
       function Play() {
         $ = localStorage.getItem('$').length;
