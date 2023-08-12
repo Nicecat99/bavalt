@@ -126,7 +126,7 @@ document.title = 'Bavalt';
                 alert('You need at least $3s');
             }
             if (localStorage.getItem('$').length >= 3) {
-              localStorage.getItem('$').slice(2);
+              localStorage.getItem('$').substr(2,localStorage.getItem('$').length+2);
               challenge = true;
               LevelUp();
             }
@@ -145,7 +145,7 @@ document.title = 'Bavalt';
           document.getElementById('Level-Up').addEventListener('click', function() {
               
             if (localStorage.getItem('$').length >= 2) {
-              localStorage.getItem('$').slice(2);
+              localStorage.getItem('$').substr(2,localStorage.getItem('$').length+2);
               LevelUp();
             } else {
                 alert('You need at least $2s');
@@ -417,7 +417,7 @@ document.title = 'Bavalt';
             }
 
             if (time < 0) {
-              localStorage.getItem('$').slice(1);
+              localStorage.getItem('$').substr(1,localStorage.getItem('$').length+1);
               clearInterval(draw2);
               Start();
             }
