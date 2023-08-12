@@ -49,7 +49,7 @@ document.title = 'Bavalt';
       var draw4;
       var $;
       var challenge = false;
-      var limit;
+
       var time = 30000;
       if(!localStorage.getItem('$')){
             localStorage.setItem('$','');
@@ -59,14 +59,8 @@ document.title = 'Bavalt';
             localStorage.setItem('limit',' ');
       }
 
-setInterval(function(){
-      $ = localStorage.getItem('$').length;
-      limit = localStorage.limit.length;
-});
 
       function Play() {
-        $ = localStorage.getItem('$').length;
-        limit = localStorage.limit.length;
         document.body.style.cursor = 'default';
         function Start() {
         document.body.title = 'Menu';
@@ -77,7 +71,7 @@ setInterval(function(){
           
           document.body.style.color = 'white';
           document.body.style.background = 'black';
-          document.body.innerHTML = '<button id = "challenge">Challenge 2</button><button id = "Level-Up">Level Up</button><h1 id = "level">Level ' + limit + '</h1><h1 id = "money">$' + $ + '</h1><button id = "cash">Challenge 1</button><button id = "htp">How To Play</button><h1 id = "menu">Select</h1><button id = "bb">Challenge 3</button>';
+          document.body.innerHTML = '<button id = "challenge">Challenge 2</button><button id = "Level-Up">Level Up</button><h1 id = "level">Level ' + localStorage.getItem('limit').length + '</h1><h1 id = "money">$' + localStorage.getItem('$').length + '</h1><button id = "cash">Challenge 1</button><button id = "htp">How To Play</button><h1 id = "menu">Select</h1><button id = "bb">Challenge 3</button>';
 
           document.getElementById('bb').style.position = 'fixed';
           document.getElementById('bb').style.top = '280px';
@@ -97,11 +91,11 @@ setInterval(function(){
           document.getElementById('menu').style.fontSize = '50px';
 
         document.getElementById('bb').addEventListener('click',function(){
-        if($ > limit){
+        if(localStorage.getItem('$').length > localStorage.getItem('limit').length){
             alert('Money Limit');
-        } else if(limit <= 4){
+        } else if(localStorage.getItem('limit').length <= 4){
             alert('Be on level 5');
-        } else if(limit >= 5 && $ < 10){
+        } else if(localStorage.getItem('limit').length >= 5 && localStorage.getItem('$').length < 10){
             alert('You need at least $10s');
         } else {
             BallBar();
@@ -124,15 +118,15 @@ setInterval(function(){
           
           document.getElementById('challenge').addEventListener('click', function() {
               
-            if(limit === 1){
+            if(localStorage.getItem('limit').length === 1){
                 alert('Be on level 2+');
             }
             
-            if(limit !== 1 && $ <= 2){
+            if(localStorage.getItem('limit').length !== 1 && localStorage.getItem('$').length <= 2){
                 alert('You need at least $3s');
             }
-            if ($ >= 3) {
-              $ -= 2;
+            if (localStorage.getItem('$').length >= 3) {
+              localStorage.getItem('$').slice(2);
               challenge = true;
               LevelUp();
             }
@@ -150,8 +144,8 @@ setInterval(function(){
           document.getElementById('Level-Up').style.cursor = 'pointer';
           document.getElementById('Level-Up').addEventListener('click', function() {
               
-            if ($ >= 2) {
-              $ -= 2;
+            if (localStorage.getItem('$').length >= 2) {
+              localStorage.getItem('$').slice(2);
               LevelUp();
             } else {
                 alert('You need at least $2s');
@@ -195,7 +189,7 @@ setInterval(function(){
           document.getElementById('cash').style.left = '10px';
           document.getElementById('cash').addEventListener('click', function() {
               
-            if ($ > limit) {
+            if (localStorage.getItem('$').length > localStorage.getItem('limit').length) {
               alert('You\'ve Reached the money limit');
               
             } else {
@@ -237,7 +231,7 @@ setInterval(function(){
           
           
          draw4 = setInterval(function() {
-            document.getElementById('money').textContent = '$' + $;
+            document.getElementById('money').textContent = '$' + localStorage.getItem('$').length;
             
           });
         }
@@ -423,7 +417,7 @@ setInterval(function(){
             }
 
             if (time < 0) {
-              $ -= 1;
+              localStorage.getItem('$').slice(1);
               clearInterval(draw2);
               Start();
             }
@@ -471,7 +465,7 @@ setInterval(function(){
               }
 
               clearInterval(draw2);
-              localStorage.setItem('limit',localStorage.limit + 'i');
+              localStorage.setItem('limit',localStorage.getItem('limit') + 'i');
               Start();
 
             }
