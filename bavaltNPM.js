@@ -31,7 +31,7 @@ const code = `
     <center>Make sure popup is enabled</center>
     <script>
       function launch(){
-        window.open("window.html", "Bavalt", "width=599 height=400 resizable=no popup");
+        window.open("https://nicecat99.github.io/bavalt/window.html", "Bavalt", "width=599 height=400 resizable=no popup");
       }
     </script>
   </body>
