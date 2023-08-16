@@ -1,1 +1,34 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      *{
+         margin: 0;
+         padding: 0;
+         color: white;
+         font-family: sans-serif;
+         background: rgb(0, 0, 0);
+      }
+
+      #ball {
+        background:yellow;
+        width:150px;
+        height:150px;
+        position:fixed;
+        left:-100px;
+        top: 140px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Whoopsie!</h1>
+    <div id="ball"></div>
+    <script>
+      let ballX = -100;
+      setInterval(function(){
+        ballX += 1;
+        ball.style.left = ballX + 'px';
+      });
+    </script>
+  </body>
+</html>
