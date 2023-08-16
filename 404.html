@@ -15,7 +15,7 @@
         width:150px;
         height:150px;
         position:fixed;
-        left:-100px;
+        left:10px;
         top: 140px;
         border-radius: 100px;
         border: 3pt solid white;
@@ -29,10 +29,18 @@
     <h2>Looks like the page you are looking for is either removed or doesn't exist</h2>
     <div id="ball"></div>
     <script>
-      let ballX = -100;
+      let ballX = 10;
+      let speed = 5;
       setInterval(function(){
-        ballX += 1;
+        ballX += speed;
         ball.style.left = ballX + 'px';
+        if(ballX > width){
+          speed = -5;
+        }
+
+        if(ballX < 0){
+          speed = 5;
+        }
       });
     </script>
   </body>
