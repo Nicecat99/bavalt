@@ -91,9 +91,7 @@ document.title = 'Bavalt';
           document.getElementById('menu').style.fontSize = '50px';
 
         document.getElementById('bb').addEventListener('click',function(){
-        if(localStorage.getItem('$').length > localStorage.getItem('limit').length){
-            alert('Money Limit');
-        } else if(localStorage.getItem('limit').length <= 4){
+        if(localStorage.getItem('limit').length <= 4){
             alert('Be on level 5');
         } else if(localStorage.getItem('limit').length >= 5 && localStorage.getItem('$').length < 10){
             alert('You need at least $10s');
