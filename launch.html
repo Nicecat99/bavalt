@@ -40,10 +40,12 @@
       function launch(){
         test = false;
         window.open("window.html", "Bavalt", "width=599 height=400 resizable=no popup");
+        //Checks if pop-up is enabled
+        setTimeout(1000,function(){
         if(!test){
           alert('Launching Failed, make sure to enable pop-up');
         }
-        
+        });
       }
     </script>
   </body>
