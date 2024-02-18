@@ -30,13 +30,20 @@
     <noscript><center><h1>Sorry, Your Browser does not support JavaScript</h1></center></noscript>
 
      <iframe style="width:599px;height:400px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;" src="https://nicecat99.github.io/bavalt/window"></iframe>
-      <h1><center><a href="javascript:launch();">Click to open</a></center></h1>
-    <center>A window may not pop up, if pop-up is blocked</center>
-    <a href="download/bavalt-file.html" download>Download bavalt</a>
+      <h1><center><a href="javascript:launch();">Launch in Window</a></center></h1>
+    <center>
+   <a href="download/bavalt-file.html" download>Download bavalt</a>
     <a href="https://nicecat99.github.io/info/bavalt#help">Help</a>
+    </center>
     <script>
+      let test;
       function launch(){
+        test = false;
         window.open("window.html", "Bavalt", "width=599 height=400 resizable=no popup");
+        if(!test){
+          alert('Launching Failed, make sure to enable pop-up');
+        }
+        
       }
     </script>
   </body>
