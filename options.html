@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Options | Bavalt</title>
+  </head>
+  <body>
+    <script>
+      let code = `
+            <a href="https://nicecat99.github.io/bavalt/download/bavalt-file.html download" onclick="close()"><button>Download bavalt</button></a>
+      <br>
+    <button onclick="btn1()">Info</button>
+      <br>
+    <a href="https://nicecat99.github.io/info/bavalt#help">Need help?</a>
+      `;
+      
+      function E(){
+        document.body.innerHTML = code;
+        
+      }
+
+      function btn1(){
+        opener.document.body.innerHTML = '<meta http-equiv="refresh" content="0;URL=https://nicecat99.github.io/info/bavalt">';
+        close();
+      }
+      
+      if(!opener){
+        document.body.innerHTML='UNFINISHED';
+      } else {
+        E();
+      }
+    </script>
+  </body>
+</html>
