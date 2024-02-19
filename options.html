@@ -11,7 +11,7 @@
       <br>
     <button onclick="btn1()">Info</button>
       <br>
-    <a href="https://nicecat99.github.io/info/bavalt#help">Need help?</a>
+     <button onclick="btn2()">Need Help?</button>
       `;
       
       function E(){
@@ -21,6 +21,11 @@
 
       function btn1(){
         opener.document.body.innerHTML = '<meta http-equiv="refresh" content="0;URL=https://nicecat99.github.io/info/bavalt">';
+        close();
+      }
+
+    function btn1(){
+        opener.document.body.innerHTML = '<meta http-equiv="refresh" content="0;URL=https://nicecat99.github.io/info/bavalt#help">';
         close();
       }
       
