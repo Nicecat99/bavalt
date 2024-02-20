@@ -39,13 +39,13 @@
             <a href="https://nicecat99.github.io/bavalt/download/bavalt-file.html" download><button class="btn">Download bavalt</button></a>
       <br>
     <button onclick="btn1()" class="btn">Info</button>
-      <br>
+      <br><br>
      <button onclick="btn2()" class="btn">Need Help?</button>
-     <br>
+     <br><br>
      <button onclick="javascript:opener.history.go(-1);close();" class="btn">Go back</button>
-     <br>
+     <br><br>
      <button onclick="btn3()" class="btn">Nicecat99's Website</button>
-     <br>
+     <br><br>
     <button onclick="launch();" class="btn">Launch in Window</button></center>
       `;
       
@@ -82,7 +82,7 @@
       }
       
       if(!opener){
-        document.body.innerHTML='UNFINISHED';
+        document.body.innerHTML='<h1>Access Denied<h1>';
       } else {
         E();
       }
