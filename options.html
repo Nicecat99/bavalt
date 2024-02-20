@@ -33,6 +33,7 @@
     <button onclick="btn1()">Info</button>
       <br>
      <button onclick="btn2()">Need Help?</button>
+    <button onclick="launch();">Launch in Window</button></center>
       `;
       
       function E(){
@@ -47,6 +48,17 @@
     function btn2(){
         opener.document.body.innerHTML = '<meta http-equiv="refresh" content="0;URL=https://nicecat99.github.io/info/bavalt#help">';
         close();
+      }
+
+        function launch(){
+        window.open("window.html", "Bavalt", "width=599 height=400 resizable=no");
+        //Checks if pop-up is enabled
+        setTimeout(1000,function(){
+          set(false);
+        if(!test){
+          alert('Launching Failed, make sure to enable pop-up');
+        }
+        });
       }
       
       if(!opener){
