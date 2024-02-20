@@ -33,6 +33,8 @@
     <button onclick="btn1()">Info</button>
       <br>
      <button onclick="btn2()">Need Help?</button>
+     <button onclick="javascript:opener.history.go(-1);close();">Go back</button>
+     <button onclick="btn3()">Nicecat99's Website</button>
     <button onclick="launch();">Launch in Window</button></center>
       `;
       
@@ -48,7 +50,12 @@
     function btn2(){
         opener.document.body.innerHTML = '<meta http-equiv="refresh" content="0;URL=https://nicecat99.github.io/info/bavalt#help">';
         close();
-      }
+    }
+
+    function btn3(){
+      opener.document.body.innerHTML = '<meta http-equiv="refresh" content="0;URL=https://nicecat99.github.io/">';
+      close();
+    }
 
         function launch(){
         window.open("window.html", "Bavalt", "width=599 height=400 resizable=no");
